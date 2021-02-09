@@ -36,4 +36,4 @@ jobs:
     - name: Ensure browsers are installed
       run: python -m playwright install
     - name: Run your tests
-      run: python test.py ${{ secrets.NUM }} ${{ secrets.PWD }} ${{ secrets.SEND_PWD }}
+      run: python main.py ${{ secrets.NUM }} ${{ secrets.PWD }} ${{ secrets.SEND_PWD }}
