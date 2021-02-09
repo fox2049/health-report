@@ -69,10 +69,11 @@ time_peking = (time_utc + timedelta(hours=8))
 
 
 def send_email(title, _contents):
-    yag = yagmail.SMTP(user='suesedu@aliyun.com', password=sys.argv[4],
+    yag = yagmail.SMTP(user='suesedu@aliyun.com', password=sys.argv[3],
                        host='smtp.aliyun.com')
     send_contents = _contents
-    yag.send(sys.argv[3], title, send_contents)
+    to = sys.argv[1] + "@sues.edu.cn"
+    yag.send(to, title, send_contents)
 
 
 try:
