@@ -6,18 +6,13 @@ A script that helps you fill out the health report automatically at a set time.
 
 Add the following secrets before you use it:
 
-### required
-
----
+### Required
 
 `NUM` - student ID
 
 `PWD` - password to access school service
 
-### not required
-
-
----
+### Not required
 
 to receive fill-out status notice.
 
