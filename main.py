@@ -79,7 +79,7 @@ def send_email(title, _contents):
 try:
     with sync_playwright() as playwright:
         title = "Success"
-        content = str(time_peking) + " temperature:" + str(run(playwright))
+        content = str(time_peking) + "\ntemperature:" + str(run(playwright))
 
 except Exception as e:
     title = "FAIL!!!"
