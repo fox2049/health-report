@@ -6,12 +6,26 @@ A script that helps you fill out the health report automatically at a set time.
 
 Add the following secrets before you use it:
 
+### required
 
-`NUM` - your student ID
+---
 
-`PWD` - your password to access school service
+`NUM` - student ID
 
-`SEND_PWD`/`TG`/`TG_ID` - Not required, but if you add mail service you can receive fill-out status notice. try to change it in `main.py`.
+`PWD` - password to access school service
+
+### not required
+
+
+---
+
+to receive fill-out status notice.
+
+`SEND_PWD` - send mail password, you need to change mail address and smtp in `main.py` firstly
+
+`TG` - telegram token
+
+`TG_ID` -  telegram chat id
 
 ## Contributor
 This tool exists thanks to:
