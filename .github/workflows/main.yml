@@ -33,7 +33,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install yagmail
         pip install playwright==1.8.0a1
+        pip install telepot
     - name: Ensure browsers are installed
       run: python -m playwright install
     - name: Run your tests
-      run: python main.py ${{ secrets.NUM }} ${{ secrets.PWD }} ${{ secrets.SEND_PWD }}
+      run: python main.py ${{ secrets.NUM }} ${{ secrets.PWD }} ${{ secrets.SEND_PWD }} ${{ secrets.TG }} ${{ secrets.TG_ID }}
