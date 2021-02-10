@@ -72,7 +72,7 @@ time_peking = (time_utc + timedelta(hours=8)).strftime("%m-%d %H:%M")
 def send_email(title, _contents):
     yag = yagmail.SMTP(user='suesedu@aliyun.com', password=sys.argv[3],
                        host='smtp.aliyun.com')
-    send_contents = _contents
+    send_contents = _contents + "\npowered by <a href='https://github.com/fox2049'> fox2049 </a>"
     to = sys.argv[1] + "@sues.edu.cn"
     yag.send(to, title, send_contents)
 
@@ -89,7 +89,7 @@ try:
         content = str(time_peking) + "\ntemperature:" + str(run(playwright))
 
 except Exception as e:
-    title = "FAIL!!!"
+    title = "⚠FAIL"
     content = str(e)
 
 # mail notice
@@ -104,5 +104,6 @@ except:
 try:
     tg_msg = title + "\n" + content
     tg_message(tg_msg)
+    print("sent to telegram---{title}")
 except:
     print("fill out success but not send notice since telegram service has not setup")
