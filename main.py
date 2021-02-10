@@ -66,7 +66,7 @@ def run(playwright):
 
 # time
 time_utc = datetime.utcnow()
-time_peking = (time_utc + timedelta(hours=8))
+time_peking = (time_utc + timedelta(hours=8)).strftime("%m-%d %H:%M")
 
 
 def send_email(title, _contents):
@@ -76,10 +76,12 @@ def send_email(title, _contents):
     to = sys.argv[1] + "@sues.edu.cn"
     yag.send(to, title, send_contents)
 
+
 def tg_message(contents):
     token = sys.argv[4]
     bot = telepot.Bot(token)
-    bot.sendMessage(1452454679, contents)
+    bot.sendMessage(sys.argv[5], contents)
+
 
 try:
     with sync_playwright() as playwright:
@@ -90,9 +92,17 @@ except Exception as e:
     title = "FAIL!!!"
     content = str(e)
 
+# mail notice
 try:
     send_email(title, content)
     print(f"send mail--{title}")
-    tg_message(content)
+
 except:
-    print("fill out success but not send mail since service has not setup")
+    print("fill out success but not send notice since mail service has not setup")
+
+# telegram notice
+try:
+    tg_msg = title + "\n" + content
+    tg_message(tg_msg)
+except:
+    print("fill out success but not send notice since telegram service has not setup")
