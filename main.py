@@ -80,9 +80,13 @@ try:
     with sync_playwright() as playwright:
         title = "Success"
         content = str(time_peking) + " temperature:" + str(run(playwright))
-        send_email(title, content)
 
 except Exception as e:
     title = "FAIL!!!"
     content = str(e)
+
+try:
     send_email(title, content)
+    print(f"send mail--{title}")
+except:
+    print("fill out success but not send mail since service has not setup")
