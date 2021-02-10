@@ -27,7 +27,7 @@ to receive fill-out status notice.
 
 `TG_ID` -  telegram chat id
 
-## Contributor
+## Acknowledgement
 This tool exists thanks to:
 
 [__@HynemanKan__](https://github.com/HynemanKan)
