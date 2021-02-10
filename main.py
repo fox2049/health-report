@@ -3,6 +3,7 @@ import random
 import sys
 from datetime import datetime, timedelta
 import yagmail
+import telepot
 
 
 def run(playwright):
@@ -75,6 +76,10 @@ def send_email(title, _contents):
     to = sys.argv[1] + "@sues.edu.cn"
     yag.send(to, title, send_contents)
 
+def tg_message(contents):
+    token = sys.argv[4]
+    bot = telepot.Bot(token)
+    bot.sendMessage(1452454679, contents)
 
 try:
     with sync_playwright() as playwright:
@@ -88,5 +93,6 @@ except Exception as e:
 try:
     send_email(title, content)
     print(f"send mail--{title}")
+    tg_message(content)
 except:
     print("fill out success but not send mail since service has not setup")

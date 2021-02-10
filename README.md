@@ -11,8 +11,7 @@ Add the following secrets before you use it:
 
 `PWD` - your password to access school service
 
-`SEND_PWD` - Not required, but if you add mail service you can receive fill-out status notice in your school mail
-(xxxxx@sues.edu.cn). try to change it in `main.py`.
+`SEND_PWD`/`TG` - Not required, but if you add mail service you can receive fill-out status notice. try to change it in `main.py`.
 
 ## Contributor
 This tool exists thanks to all the people who contribute.
