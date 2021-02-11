@@ -77,7 +77,7 @@ def tg_message(contents):
 with sync_playwright() as playwright:
     title = "Success"
     content = str(time_peking) + "\ntemperature:" + str(run(playwright))
-    if sys.argv in dir():
+    if sys.argv[3] in dir() and sys.argv[4]:
         tg_msg = title + "\n" + content
         tg_message(tg_msg)
         print("sent to telegram---{title}")
