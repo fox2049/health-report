@@ -2,7 +2,6 @@ from playwright.sync_api import sync_playwright
 import random
 import sys
 from datetime import datetime, timedelta
-import yagmail
 import telepot
 
 
@@ -69,41 +68,16 @@ time_utc = datetime.utcnow()
 time_peking = (time_utc + timedelta(hours=8)).strftime("%m-%d %H:%M")
 
 
-def send_email(title, _contents):
-    yag = yagmail.SMTP(user='suesedu@aliyun.com', password=sys.argv[3],
-                       host='smtp.aliyun.com')
-    send_contents = _contents + "\npowered by <a href='https://github.com/fox2049'> fox2049 </a>"
-    to = sys.argv[1] + "@sues.edu.cn"
-    yag.send(to, title, send_contents)
-
-
 def tg_message(contents):
     token = sys.argv[4]
     bot = telepot.Bot(token)
-    bot.sendMessage(sys.argv[5], contents)
+    bot.sendMessage(int(sys.argv[3]), contents)
 
 
-try:
-    with sync_playwright() as playwright:
-        title = "Success"
-        content = str(time_peking) + "\ntemperature:" + str(run(playwright))
-
-except Exception as e:
-    title = "⚠FAIL"
-    content = str(e)
-
-# mail notice
-try:
-    send_email(title, content)
-    print(f"send mail--{title}")
-
-except:
-    print("fill out success but not send notice since mail service has not setup")
-
-# telegram notice
-try:
-    tg_msg = title + "\n" + content
-    tg_message(tg_msg)
-    print("sent to telegram---{title}")
-except:
-    print("fill out success but not send notice since telegram service has not setup")
+with sync_playwright() as playwright:
+    title = "Success"
+    content = str(time_peking) + "\ntemperature:" + str(run(playwright))
+    if sys.argv in dir():
+        tg_msg = title + "\n" + content
+        tg_message(tg_msg)
+        print("sent to telegram---{title}")

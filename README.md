@@ -16,9 +16,7 @@ Add the following secrets before you use it:
 
 to receive fill-out status notice.
 
-`SEND_PWD` - send mail password, you need to change mail address and smtp in `main.py` firstly
-
-`TG` - telegram token
+`TG_TOKEN` - telegram token
 
 `TG_ID` -  telegram chat id
 
