@@ -63,15 +63,17 @@ def run(playwright):
     return temperature
 
 
-# time
+# github action run by UTC time, beijing time is UTC+8
 time_utc = datetime.utcnow()
 time_peking = (time_utc + timedelta(hours=8)).strftime("%m-%d %H:%M")
 
 
+# get variables from action secrets
 def tg_message(contents):
     token = sys.argv[4]
+    chat_id = int(sys.argv[3])
     bot = telepot.Bot(token)
-    bot.sendMessage(int(sys.argv[3]), contents)
+    bot.sendMessage(chat_id, contents)
 
 
 with sync_playwright() as playwright:
@@ -80,6 +82,6 @@ with sync_playwright() as playwright:
     try:
         tg_msg = title + "\n" + content
         tg_message(tg_msg)
-        print("sent to telegram---{title}")
+        print(f"sent to telegram---{title}")
     except:
         print("No telegram services")
