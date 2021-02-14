@@ -23,6 +23,11 @@ to receive fill-out status notice.
 ## Acknowledgement
 This tool exists thanks to:
 
-[__@HynemanKan__](https://github.com/HynemanKan)
+[@HynemanKan][1]
 
-[__@zsqw123__](https://github.com/zsqw123)
+[@zsqw123][2]
+
+<!--link-->
+[1]: https://github.com/HynemanKan
+
+[2]: https://github.com/zsqw123
