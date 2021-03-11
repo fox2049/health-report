@@ -77,8 +77,8 @@ def tg_message(contents):
 
 
 with sync_playwright() as playwright:
-    title = "填报成功"
-    content = "\n体温:" + str(run(playwright) + "℃")
+    title = "Success"
+    content = "\nTemperature:" + str(run(playwright))
     print(content)
     try:
         print("sending message")
