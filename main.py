@@ -71,8 +71,12 @@ time_peking = (time_utc + timedelta(hours=8)).strftime("%m-%d %H:%M")
 # get variables from action secrets
 def tg_message(contents):
     token = sys.argv[4]
+    print("token读取完毕")
     chat_id = int(sys.argv[3])
+    print("chat_id读取完毕")
     bot = telepot.Bot(token)
+    print("bot设置完毕")
+    print("正在发送：", contents)
     bot.sendMessage(chat_id, contents)
 
 
