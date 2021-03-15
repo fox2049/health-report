@@ -33,5 +33,3 @@ jobs:
       run: python -m playwright install
     - name: Run your tests
       run: python main.py ${{ secrets.NUM }} ${{ secrets.PWD }} ${{ secrets.TG_ID }} ${{ secrets.TG_TOKEN }}
-    - name: Yangling
-      run: python main.py ${{ secrets.NUM_YL }} ${{ secrets.PWD_YL }} ${{ secrets.TG_ID }} ${{ secrets.TG_TOKEN }}
