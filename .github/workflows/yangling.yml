@@ -26,10 +26,9 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install yagmail
         pip install playwright==1.8.0a1
         pip install telepot
     - name: Ensure browsers are installed
       run: python -m playwright install
     - name: Yangling
-      run: python main.py ${{ secrets.NUM_YL }} ${{ secrets.PWD_YL }} ${{ secrets.TG_ID }} ${{ secrets.TG_TOKEN }}
+      run: python main.py ${{ secrets.NUM_YL }} ${{ secrets.PWD_YL }}
