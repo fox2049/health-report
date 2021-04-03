@@ -10,7 +10,7 @@ on:
     - cron: '31 18 * * *'
     - cron: '31 22 * * *'
     - cron: '6 4 * * *'  
-    - cron: '46 5 * * *'
+    - cron: '6 6 * * *'
 jobs:
   build:
 
