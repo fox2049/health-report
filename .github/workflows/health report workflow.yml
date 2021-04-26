@@ -8,9 +8,9 @@ on:
     branches: [ master ]
   schedule:
     - cron: '31 18 * * *'
-    - cron: '31 22 * * *'
+    - cron: '31 19 * * *'
     - cron: '6 4 * * *'  
-    - cron: '6 6 * * *'
+    - cron: '6 5 * * *'
 jobs:
   build:
 
