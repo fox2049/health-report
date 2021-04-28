@@ -9,7 +9,9 @@ on:
   schedule:
     - cron: '31 18 * * *'
     - cron: '31 19 * * *'
-    - cron: '6 4 * * *'  
+    - cron: '00 19 * * *'
+    - cron: '6 4 * * *'
+    - cron: '30 4 * * *' 
     - cron: '6 5 * * *'
 jobs:
   build:
@@ -31,7 +33,7 @@ jobs:
     - name: Ensure browsers are installed
       run: python -m playwright install
     - name: Sun Yuexin
-      run: python main.py ${{ secrets.NUM }} ${{ secrets.PWD }} ${{ secrets.TG_ID }} ${{ secrets.TG_TOKEN }}
+      run: python main.py ${{ secrets.NUM }} ${{ secrets.PWD }}
     - name: Yang Ling
       run: python main.py ${{ secrets.NUM_YL }} ${{ secrets.PWD_YL }}
     - name: Shen Xiaoqi
