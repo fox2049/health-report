@@ -1,0 +1,33 @@
+name: Shen_Xiaoqi
+
+on:
+  push:
+    branches: [ master ]
+  schedule:
+    - cron: '20 18 * * *'
+    - cron: '20 19 * * *'
+    - cron: '10 19 * * *'
+    - cron: '10 4 * * *'
+    - cron: '20 4 * * *' 
+    - cron: '16 5 * * *'
+jobs:
+  build:
+
+    runs-on: windows-2019
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: microsoft/playwright-github-action@v1
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install playwright==1.8.0a1
+        pip install telepot
+    - name: Ensure browsers are installed
+      run: python -m playwright install
+    - name: Shen Xiaoqi
+      run: python main.py ${{ secrets.NUM_SXQ }} ${{ secrets.PWD_SXQ }}
