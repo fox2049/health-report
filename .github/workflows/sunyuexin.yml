@@ -1,18 +1,18 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: health report workflow
+name: Sun_Yuexin
 
 on:
   push:
     branches: [ master ]
   schedule:
-    - cron: '31 18 * * *'
-    - cron: '31 19 * * *'
-    - cron: '00 19 * * *'
-    - cron: '6 4 * * *'
-    - cron: '30 4 * * *' 
-    - cron: '6 5 * * *'
+    - cron: '15 18 * * *'
+    - cron: '10 19 * * *'
+    - cron: '05 19 * * *'
+    - cron: '18 4 * * *'
+    - cron: '14 4 * * *' 
+    - cron: '26 5 * * *'
 jobs:
   build:
 
@@ -34,7 +34,3 @@ jobs:
       run: python -m playwright install
     - name: Sun Yuexin
       run: python main.py ${{ secrets.NUM }} ${{ secrets.PWD }}
-    - name: Yang Ling
-      run: python main.py ${{ secrets.NUM_YL }} ${{ secrets.PWD_YL }}
-    - name: Shen Xiaoqi
-      run: python main.py ${{ secrets.NUM_SXQ }} ${{ secrets.PWD_SXQ }}
