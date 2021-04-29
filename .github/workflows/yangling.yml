@@ -4,12 +4,12 @@ on:
   push:
     branches: [ master ]
   schedule:
-    - cron: '31 18 * * *'
-    - cron: '31 19 * * *'
+    - cron: '31 17 * * *'
+    - cron: '31 20 * * *'
     - cron: '00 19 * * *'
-    - cron: '6 4 * * *'
-    - cron: '30 4 * * *' 
-    - cron: '6 5 * * *'
+    - cron: '50 4 * * *'
+    - cron: '50 5 * * *' 
+    - cron: '50 6 * * *'
 jobs:
   build:
 
