@@ -82,11 +82,4 @@ with sync_playwright() as playwright:
     title = "Success"
     content = "\nTemperature:" + str(run(playwright))
     print(content)
-    try:
-        print("sending message")
-        tg_msg = title + "\n" + content
-        # tg_message(tg_msg)
-        bot.sendMessage(int(sys.argv[3]), ![](\a.png), "MarkdownV2")
-        print(f"sent to telegram---{title}")
-    except:
-        print("No telegram services")
+
