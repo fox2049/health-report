@@ -40,7 +40,7 @@ jobs:
       run: |
         git config --global user.name "fox2049"
         git config --global user.email "fox@sues.edu.cn"
-        git add a.png && echo A
+        git add ./a.png && echo A
         git commit -m 'upload pachong result' && echo B
         git push -u origin master && echo C
       
