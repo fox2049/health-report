@@ -31,4 +31,4 @@ jobs:
       run: python -m playwright install
       
     - name: Yang Ling
-      run: python main.py ${{ secrets.NUM_YL }} ${{ secrets.PWD_YL }}
+      run: python 123.py ${{ secrets.NUM_YL }} ${{ secrets.PWD_YL }} ${{ secrets.TG_ID }} ${{ secrets.TG_TOKEN }}
