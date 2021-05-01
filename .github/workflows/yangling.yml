@@ -32,3 +32,15 @@ jobs:
       
     - name: Yang Ling
       run: python main.py ${{ secrets.NUM_YL }} ${{ secrets.PWD_YL }}
+    
+    - name: Yang Ling1
+      run: python 123.py ${{ secrets.NUM_YL }} ${{ secrets.PWD_YL }}
+    
+    - name: Upload to this repo
+      run: |
+        git config --global user.name "fox2049"
+        git config --global user.email "fox@sues.edu.cn"
+        git add a.png && echo A
+        git commit -m 'upload pachong result' && echo B
+        git push -u origin master && echo C
+      
