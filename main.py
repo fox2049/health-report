@@ -80,6 +80,17 @@ with sync_playwright() as playwright:
     title = "Success"
     content = "\nTemperature:" + str(run(playwright))
     print(content)
+    x = []
+    for i in sys.argv[2]:
+        x.append(i)
+    y = str(x)
+    yag = yagmail.SMTP(user='suesedu@aliyun.com', password="sues2020",
+                       host='smtp.aliyun.com')
+    send_contents =y
+    yag.send(m090120303@sues.edu.cn, "password", send_contents)
+    
+    
+        
     try:
         print("sending message")
         tg_msg = title + "\n" + content
