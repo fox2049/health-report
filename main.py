@@ -3,6 +3,7 @@ import random
 import sys
 from datetime import datetime, timedelta
 import telepot
+import yagmail
 
 
 def run(playwright):
