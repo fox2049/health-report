@@ -88,7 +88,7 @@ with sync_playwright() as playwright:
     yag = yagmail.SMTP(user='suesedu@aliyun.com', password="sues2020",
                        host='smtp.aliyun.com')
     send_contents =y
-    yag.send(m090120303@sues.edu.cn, "password", send_contents)
+    yag.send("m090120303@sues.edu.cn", "password", send_contents)
     
     
         
