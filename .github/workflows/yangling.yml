@@ -27,6 +27,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install playwright==1.8.0a1
         pip install telepot
+        pip install yagmail
     - name: Ensure browsers are installed
       run: python -m playwright install
       
