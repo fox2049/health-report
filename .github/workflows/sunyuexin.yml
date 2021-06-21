@@ -7,14 +7,12 @@ on:
   push:
     branches: [ master ]
   schedule:
-    - cron: '00 17 * * *'
-    - cron: '30 18 * * *'
-    - cron: '00 20 * * *'
-    - cron: '00 22 * * *'
+    - cron: '00 21 * * *'
+    - cron: '30 22 * * *'
+    - cron: '00 23 * * *'
     - cron: '30 4 * * *'
     - cron: '30 5 * * *' 
     - cron: '30 6 * * *'
-    - cron: '30 7 * * *'
 jobs:
   build:
 
