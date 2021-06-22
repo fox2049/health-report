@@ -4,7 +4,7 @@ on:
   push:
     branches: [ master ]
   schedule:
-    - cron: '00 22 * * *'
+    - cron: '55 22 * * *'
     - cron: '30 23 * * *'
     - cron: '00 24 * * *'
     - cron: '10 5 * * *'
